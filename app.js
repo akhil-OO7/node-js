@@ -17,6 +17,11 @@ mongoose
   .then((res) => app.listen(3000))
   .catch((err) => console.log(err));
 
+// middleware static files
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+
 app.set("view engine", "ejs");
 
 // mongoose and mondo sandbox routes
@@ -64,11 +69,6 @@ app.get("/all-blogs", (req, res) => {
 //   console.log("method: ", req.method);
 //   next();
 // });
-
-// middleware static files
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   res.redirect("/blogs");
