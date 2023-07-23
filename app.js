@@ -10,7 +10,7 @@ const app = express();
 
 // connect to mongodb
 const dbURI =
-  "mongodb+srv://testuser1:test1234@cluster0.qnf8alw.mongodb.net/cluster0?retryWrites=true&w=majority";
+  "---enter---mongo---URI---";
 
 mongoose
   .connect(dbURI)
